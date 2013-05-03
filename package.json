@@ -1,0 +1,32 @@
+{
+  "name": "eioemitter",
+  "version": "0.0.0",
+  "description": "EventEmitter duplexer for engine.io",
+  "main": "index.js",
+  "dependencies": {
+    "eiojson": "~0.5.0"
+  },
+  "devDependencies": {
+    "broquire": "~0.3.0",
+    "cleanup": "~0.2.0",
+    "engine.io": "~0.5.0",
+    "engine.io-client": "~0.5.0",
+    "okdone": "~0.2.0"
+  },
+  "scripts": {
+    "test": "node test.js && node test-wo-eiojson.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeal/eioemitter"
+  },
+  "keywords": [
+    "engine.io",
+    "realtime",
+    "events",
+    "event",
+    "emitter"
+  ],
+  "author": "Mikeal Rogers",
+  "license": "BSD"
+}
