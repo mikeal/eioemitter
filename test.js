@@ -3,6 +3,9 @@ var eioemitter = require('./')
   , cleanup = require('cleanup')
   , assert = require('assert')
   , ok = require('okdone')
+  , engine = require('engine.io')
+  , broquire = require('broquire')(require)
+  , engineClient = broquire('engine.io-client', 'eio')
   ;
 
 var d = cleanup(function (error) {
@@ -19,7 +22,7 @@ function makeListener (n) {
     assert.ok(!nothing)
     completed += 1
     ok(name)
-    if (completed === 8) {
+    if (completed === 16) {
       d.cleanup()
     }
   }
@@ -52,5 +55,17 @@ s.on('connection', function (socket) {
   test(c)
 })
 
-exports.test = test
-exports.binder = binder
+var es = engine.listen(8181, function () {
+  var socket = engineClient('ws://localhost:8181')
+  assert.ok(!socket.json)
+  var c = eioemitter(socket)
+  binder(c)
+  test(c)
+})
+
+es.on('connection', function (socket) {
+  assert.ok(!socket.json)
+  var c = eioemitter(socket)
+  binder(c)
+  test(c)
+})
