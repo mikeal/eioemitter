@@ -1,6 +1,6 @@
 {
   "name": "eioemitter",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "EventEmitter duplexer for engine.io",
   "main": "index.js",
   "dependencies": {
