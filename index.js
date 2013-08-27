@@ -18,6 +18,9 @@ function Emitter (socket, namespace) {
         , args: args
         }
       ;
+    if (obj.name === 'addListener') return
+    if (obj.name === 'newListener') return
+    if (obj.name === 'removeListener') return
     socket.json(obj)
   }
 
