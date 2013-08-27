@@ -4,7 +4,7 @@
   "description": "EventEmitter duplexer for engine.io",
   "main": "index.js",
   "dependencies": {
-    "eiojson": "~0.7.0"
+    "eiojson": "~0.9.0"
   },
   "devDependencies": {
     "broquire": "~0.3.0",
