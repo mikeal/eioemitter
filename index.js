@@ -36,6 +36,6 @@ function Emitter (socket, namespace) {
 util.inherits(Emitter, events.EventEmitter)
 
 module.exports = function (socket, namespace) {
-  if (!socket.json) eiojson.binder(socket)
+  if (!socket.json) eiojson(socket)
   return new Emitter(socket, namespace)
 }

@@ -43,8 +43,8 @@ function test (c) {
   c.emit('test4', 'test4')
 }
 
-var s = eiojson.server.listen(8080, function () {
-  var c = eioemitter(eiojson.client('ws://localhost:8080'))
+var s = engine.listen(8080, function () {
+  var c = eioemitter(engineClient('ws://localhost:8080'))
   binder(c)
   test(c)
 })
